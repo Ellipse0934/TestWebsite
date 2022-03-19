@@ -49,5 +49,5 @@ jobs:
         aws s3 sync __site/ s3://${{ secrets.AWS_BUCKET_NAME }} --delete --follow-symlinks
     - name: Add S3 website configuration
       run: |
-        aws s3api put-bucket-website --bucket s3://${{ secrets.AWS_BUCKET_NAME }} --website-configuration file://s3-website-conf.json
+        aws s3api put-bucket-website --bucket ${{ secrets.AWS_BUCKET_NAME }} --website-configuration file://s3-website-conf.json
 
